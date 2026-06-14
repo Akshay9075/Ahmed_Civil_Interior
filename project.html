@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Projects | Ahmed POP - POP Work, False Ceiling, Gypsum & Interior Projects Mumbai</title>
+    <meta name="description" content="Explore Ahmed POP's portfolio of premium POP work, false ceiling installations, gypsum finishing, interior design, painting, plumbing, electrical & furniture projects in Mumbai.">
+    <meta name="keywords" content="Ahmed POP projects, POP work Mumbai, false ceiling gallery, gypsum work, interior design portfolio, painting projects, plumbing works, electrical projects, furniture gallery">
+    <meta name="author" content="Ahmed POP">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#B9924D">
+    <link rel="icon" href="img/pop_logo.png" type="image/png">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ahmed POP">
+    <meta property="og:title" content="Our Projects | Ahmed POP - Civil Interior Portfolio">
+    <meta property="og:description" content="View our completed projects - POP ceilings, false ceilings, gypsum partitions, interior design, painting, plumbing, electrical & furniture work.">
+    <meta property="og:image" content="https://akshay9075.github.io/Ahmed-POP/img/pop_logo.png">
+    <meta property="og:url" content="https://akshay9075.github.io/Ahmed-POP/project.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/index-style.css" rel="stylesheet">
+    <link href="css/about-style.css" rel="stylesheet">
+    
+    <style>
+        /* Page Header with Background Image */
+        .page-header-bg {
+            background: linear-gradient(135deg, rgba(14,24,38,0.85) 0%, rgba(14,24,38,0.7) 100%), url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&h=500&fit=crop');
+            background-size: cover;
+            background-position: center 40%;
+            background-attachment: fixed;
+            padding: 100px 0;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .page-header-bg {
+                background-attachment: scroll;
+                padding: 60px 0;
+            }
+        }
+        
+        /* Category Filter Buttons */
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--secondary);
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Project Cards */
+        .project-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            background: white;
+            height: 100%;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .project-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .project-card:hover .project-img img {
+            transform: scale(1.08);
+        }
+        .project-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .project-overlay a {
+            color: white;
+            background: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .project-info p {
+            font-size: 14px;
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--secondary);
+            padding: 60px 0;
+        }
+        .stat-box {
+            text-align: center;
+            color: white;
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            font-family: 'Oswald', sans-serif;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 16px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        .cta-content h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        .cta-content p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        /* Footer Logo */
+        .footer-logo {
+            height: 120px;
+            width: auto;
+            max-width: 360px;
+            object-fit: contain;
+            background: #ffffff;
+            padding: 10px 14px;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        @media (max-width: 575.98px) {
+            .footer-logo {
+                height: 96px;
+                max-width: 300px;
+            }
+        }
+        
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .floating-buttons a {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-decoration: none;
+        }
+        .floating-buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .call-btn { background: white; }
+        .call-btn i { color: #037bc9; font-size: 24px; }
+        .whatsapp-btn { background: #25D366; }
+        .whatsapp-btn i { color: white; font-size: 28px; }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 150px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            border: 10px solid #B9924D;
+            /* border-color: #B9924D; */
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 998;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top i {
+            color: #B9924D;
+            font-size: 20px;
+        }
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+     <div class="container-fluid bg-dark py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-white pl-3" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container position-relative" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 px-3 px-lg-5">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="img/pop_logo2.png" alt="Ahmed POP Logo" class="site-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">Services</a>
+                        <a href="project.html" class="nav-item nav-link active">Projects</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="tel:7900036719" class="btn btn-primary ms-3 d-none d-lg-block" style="border-radius: 30px;color: white;">Get Quote <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-white py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-left mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                        <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h5>Our Office</h5>
+                            <p class="m-0">Gali No-14, Ganapat Patil Nagar, New Link Rd, Borivali West, Mumbai, Maharashtra 400103</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-left text-lg-center mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                        <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h5>Email Us</h5>
+                            <p class="m-0">shahenterprises756@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-left text-lg-right mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                        <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h5>Call Us</h5>
+                            <p class="m-0">7900036719</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Page Header with Background Image -->
+    <div class="page-header-bg">
+        <div class="container text-center text-white" data-aos="fade-up">
+            <h1 class="display-4 fw-bold text-uppercase text-white">Our Projects</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center bg-transparent">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item active text-warning" aria-current="page">Projects</li>
+                </ol>
+            </nav>
+            <p class="lead mt-3">Explore our portfolio of premium civil interior projects across Mumbai</p>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-box">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-box">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-box">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-box">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Expert Team Members</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Gallery Section -->
+    <div class="container-fluid py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h6 class="text-primary text-uppercase">Our Portfolio</h6>
+                <h2 class="display-6">POP, False Ceiling & Interior Projects</h2>
+                <p class="mx-auto" style="max-width: 700px;">Browse through our completed projects showcasing quality craftsmanship and attention to detail</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="row mb-5">
+                <div class="col-12 text-center" data-aos="fade-up">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="pop">POP & Gypsum</button>
+                        <button class="filter-btn" data-filter="ceiling">False Ceiling</button>
+                        <button class="filter-btn" data-filter="interior">Interior Design</button>
+                        <button class="filter-btn" data-filter="painting">Painting</button>
+                        <button class="filter-btn" data-filter="furniture">Furniture</button>
+                        <button class="filter-btn" data-filter="plumbing">Plumbing & Electrical</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="row g-4" id="projects-grid">
+                <!-- POP & Gypsum Projects -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="pop" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/pop5.png" alt="Modern POP Ceiling Design">
+                            <span class="project-category">POP & Gypsum</span>
+                            <div class="project-overlay">
+                                <a href="img/pop5.png" data-lightbox="projects" data-title="Modern POP Ceiling Design - Borivali West">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Modern POP Ceiling Design</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Borivali West, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="pop" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/pop1.jpg" alt="Elegant POP Wall Molding">
+                            <span class="project-category">POP & Gypsum</span>
+                            <div class="project-overlay">
+                                <a href="img/pop1.jpg" data-lightbox="projects" data-title="Elegant POP Wall Molding - Kandivali">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Elegant POP Wall Molding</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Kandivali East, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="pop" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/pop3.jpg" alt="Gypsum Partition Wall">
+                            <span class="project-category">POP & Gypsum</span>
+                            <div class="project-overlay">
+                                <a href="img/pop3.jpg" data-lightbox="projects" data-title="Gypsum Partition Wall - Office Space">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Gypsum Partition Wall</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Andheri West, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- False Ceiling Projects -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="ceiling" data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/work1.png" alt="Modern False Ceiling with Cove Lighting">
+                            <span class="project-category">False Ceiling</span>
+                            <div class="project-overlay">
+                                <a href="img/work1.png" data-lightbox="projects" data-title="Modern False Ceiling with Cove Lighting">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>False Ceiling with Cove Lighting</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Goregaon, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="ceiling" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/pop7.webp" alt="Gypsum False Ceiling Design">
+                            <span class="project-category">False Ceiling</span>
+                            <div class="project-overlay">
+                                <a href="img/pop7.webp" data-lightbox="projects" data-title="Gypsum False Ceiling Design">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Gypsum False Ceiling</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Malad West, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior Design Projects -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="interior" data-aos="fade-up" data-aos-delay="350">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/work2.png" alt="Complete Home Interior Design">
+                            <span class="project-category">Interior Design</span>
+                            <div class="project-overlay">
+                                <a href="img/work2.png" data-lightbox="projects" data-title="Complete Home Interior Design">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Complete Home Interior</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Andheri West, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="interior" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/pop8.avif" alt="Living Room Interior Design">
+                            <span class="project-category">Interior Design</span>
+                            <div class="project-overlay">
+                                <a href="img/pop8.avif" data-lightbox="projects" data-title="Living Room Interior Design">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Living Room Interior</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Juhu, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painting Projects -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="painting" data-aos="fade-up" data-aos-delay="450">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/paint.webp" alt="Premium Wall Painting & Texture">
+                            <span class="project-category">Painting</span>
+                            <div class="project-overlay">
+                                <a href="img/paint.webp" data-lightbox="projects" data-title="Premium Wall Painting & Texture">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Premium Wall Painting</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Borivali, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Furniture Projects -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="furniture" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/furniture.webp" alt="Custom Modular Wardrobe">
+                            <span class="project-category">Furniture</span>
+                            <div class="project-overlay">
+                                <a href="img/furniture.webp" data-lightbox="projects" data-title="Custom Modular Wardrobe">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Modular Wardrobe</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Kandivali, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="furniture" data-aos="fade-up" data-aos-delay="550">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/furniture1.webp" alt="TV Unit & Storage Cabinet">
+                            <span class="project-category">Furniture</span>
+                            <div class="project-overlay">
+                                <a href="img/furniture1.webp" data-lightbox="projects" data-title="TV Unit & Storage Cabinet">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>TV Unit & Storage</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Malad, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plumbing & Electrical Projects -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="plumbing" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/plumbing.jpeg" alt="Bathroom Plumbing Installation">
+                            <span class="project-category">Plumbing</span>
+                            <div class="project-overlay">
+                                <a href="img/plumbing.jpeg" data-lightbox="projects" data-title="Bathroom Plumbing Installation">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Bathroom Plumbing</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Goregaon, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="plumbing" data-aos="fade-up" data-aos-delay="650">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/electrician.webp" alt="Electrical Wiring & Lighting Setup">
+                            <span class="project-category">Electrical</span>
+                            <div class="project-overlay">
+                                <a href="img/electrician.webp" data-lightbox="projects" data-title="Electrical Wiring & Lighting Setup">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Electrical & Lighting</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Andheri, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="ceiling" data-aos="fade-up" data-aos-delay="700">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/sliding.jpg" alt="Sliding Door Installation">
+                            <span class="project-category">False Ceiling</span>
+                            <div class="project-overlay">
+                                <a href="img/sliding.jpg" data-lightbox="projects" data-title="Sliding Door Installation">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Sliding Door Installation</h4>
+                            <p><i class="fas fa-map-marker-alt text-primary me-1"></i> Borivali, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <p class="text-muted">Want to see more? Contact us for a complete portfolio of our work</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Request Portfolio <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <!-- <div class="container-fluid bg-light py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h6 class="text-primary text-uppercase">Testimonials</h6>
+                <h2 class="display-6">What Our Clients Say</h2>
+                <p>Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white p-5 rounded-4 shadow-sm h-100">
+                        <i class="fas fa-quote-left fs-1 text-primary opacity-50 mb-3"></i>
+                        <p class="fs-5 mb-4">Ahmed POP did an amazing job with our false ceiling and POP work. The team was professional, punctual, and the finishing is exceptional. Highly recommended!</p>
+                        <div>
+                            <h5 class="mb-0">Rohit Sharma</h5>
+                            <span class="text-muted small">Homeowner, Borivali</span>
+                            <div class="mt-2"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white p-5 rounded-4 shadow-sm h-100">
+                        <i class="fas fa-quote-left fs-1 text-primary opacity-50 mb-3"></i>
+                        <p class="fs-5 mb-4">Complete interior solution under one roof! From plumbing to false ceiling to furniture - everything handled perfectly. Best value for money.</p>
+                        <div>
+                            <h5 class="mb-0">Priya Mehta</h5>
+                            <span class="text-muted small">Flat Owner, Kandivali</span>
+                            <div class="mt-2"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Contact us today for a free consultation and quotation. Let's bring your dream interior to life!</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="tel:7900036719" class="btn btn-primary btn-lg"><i class="fas fa-phone-alt me-2"></i> Call Now</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">Get Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="mb-3">
+                    <img src="img/pop_logo1.png" alt="Ahmed POP Logo" class="footer-logo">
+                </div>
+                <p class="text-white">Ahmed POP delivers premium POP, false ceiling, gypsum and interior design projects with high quality finishing and elegant style.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Quick Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Home</a>
+                    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right me-2"></i>Our Services</a>
+                    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right me-2"></i>Our Projects</a>
+                    <a class="text-white" href="contact.html"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Get In Touch</h4>
+                <p><i class="fa fa-map-marker-alt me-2"></i>Gali No-14, Ganapat Patil Nagar, New Link Rd, Borivali West, Mumbai, Maharashtra 400103</p>
+                <p><i class="fa fa-phone-alt me-2"></i>7900036719</p>
+                <p><i class="fa fa-envelope me-2"></i>shahenterprises756@gmail.com</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-light rounded-circle text-center me-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center me-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center me-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center me-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container border-top border-secondary pt-5">
+            <p class="m-0 text-center text-white">&copy; <a class="text-white font-weight-bold" href="#">Ahmed POP</a>. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:7900036719" class="call-btn"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/917900036719?text=Hello%20Ahmed%20POP%2C%20I%20am%20interested%20in%20your%20services.%20Please%20share%20details%20and%20quotation." target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        // Filter functionality
+        $('.filter-btn').click(function() {
+            $('.filter-btn').removeClass('active');
+            $(this).addClass('active');
+            
+            var filterValue = $(this).attr('data-filter');
+            
+            if (filterValue === 'all') {
+                $('.project-item').fadeIn(300);
+            } else {
+                $('.project-item').each(function() {
+                    if ($(this).attr('data-category') === filterValue) {
+                        $(this).fadeIn(300);
+                    } else {
+                        $(this).fadeOut(200);
+                    }
+                });
+            }
+        });
+        
+        // Back to top button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('#backToTop').addClass('show');
+            } else {
+                $('#backToTop').removeClass('show');
+            }
+        });
+        
+        $('#backToTop').click(function() {
+            $('html, body').animate({scrollTop: 0}, 800);
+            return false;
+        });
+    </script>
+</body>
+</html>
